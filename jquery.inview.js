@@ -18,9 +18,9 @@
       //
       // By the way, iOS (iPad, iPhone, ...) seems to not execute, or at least delays
       // intervals while the user scrolls. Therefore the inview event might fire a bit late there
-      // 
+      //
       // Don't waste cycles with an interval until we get at least one element that
-      // has bound to the inview event.  
+      // has bound to the inview event.
       if (!timer && !$.isEmptyObject(inviewObjects)) {
          timer = setInterval(checkInView, 250);
       }
@@ -66,12 +66,12 @@
   }
 
   function checkInView() {
-    var $elements = $(), elementsLength, i = 0;
+    var $elements = [], elementsLength, i = 0;
 
     $.each(inviewObjects, function(i, inviewObject) {
       var selector  = inviewObject.data.selector,
           $element  = inviewObject.$element;
-      $elements = $elements.add(selector ? $element.find(selector) : $element);
+      $elements.push(selector ? $element.find(selector) : $element);
     });
 
     elementsLength = $elements.length;
@@ -81,7 +81,7 @@
 
       for (; i<elementsLength; i++) {
         // Ignore elements that are not in the DOM tree
-        if (!$.contains(documentElement, $elements[i])) {
+        if (!$.contains(documentElement, $elements[i][0])) {
           continue;
         }
 
@@ -92,7 +92,7 @@
             visiblePartX,
             visiblePartY,
             visiblePartsMerged;
-        
+
         // Don't ask me why because I haven't figured out yet:
         // viewportOffset and viewportSize are sometimes suddenly null in Firefox 5.
         // Even though it sounds weird:
@@ -101,7 +101,7 @@
         if (!viewportOffset || !viewportSize) {
           return;
         }
-        
+
         if (elementOffset.top + elementSize.height > viewportOffset.top &&
             elementOffset.top < viewportOffset.top + viewportSize.height &&
             elementOffset.left + elementSize.width > viewportOffset.left &&
@@ -126,7 +126,7 @@
   $(w).bind("scroll resize scrollstop", function() {
     viewportSize = viewportOffset = null;
   });
-  
+
   // IE < 9 scrolls to focused elements without firing the "scroll" event
   if (!documentElement.addEventListener && documentElement.attachEvent) {
     documentElement.attachEvent("onfocusin", function() {
