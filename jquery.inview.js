@@ -3,7 +3,18 @@
  *    - based on the idea of Remy Sharp, http://remysharp.com/2009/01/26/element-in-view-event-plugin/
  *    - forked from http://github.com/zuk/jquery.inview/
  */
-(function ($) {
+(function (factory) {
+  if (typeof define == 'function' && define.amd) {
+    // AMD
+    define(['jquery'], factory);
+  } else if (typeof exports === 'object') {
+    // Node, CommonJS
+    module.exports = factory(require('jquery'));
+  } else {
+      // Browser globals
+    factory(jQuery);
+  }
+}(function ($) {
   var inviewObjects = {}, viewportSize, viewportOffset,
       d = document, w = window, documentElement = d.documentElement, expando = $.expando, timer;
 
@@ -133,4 +144,4 @@
       viewportOffset = null;
     });
   }
-})(jQuery);
+}));
