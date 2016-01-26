@@ -2,9 +2,9 @@
 
 Event that is fired as soon as an element appears in the user's viewport.
 
-* **Author:** "Christopher Blum":http://twitter.com/ChristopherBlum
-* **Original idea and concept by:** "Remy Sharp":http://remysharp.com/2009/01/26/element-in-view-event-plugin/
-* **Forked from:** "https://github.com/zuk/jquery.inview/":https://github.com/zuk/jquery.inview/
+* **Author:** [Christopher Blum](http://twitter.com/ChristopherBlum)
+* **Original idea and concept by:** [Remy Sharp](http://remysharp.com/2009/01/26/element-in-view-event-plugin/)
+* **Forked from:** [https://github.com/zuk/jquery.inview/](https://github.com/zuk/jquery.inview/)
 * **Requires:** jQuery 1.8+
 
 ## Usage
