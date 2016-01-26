@@ -103,7 +103,7 @@
       }
 
       var $element      = $($elements[i]),
-          elementSize   = { height: $element.height(), width: $element.width() },
+          elementSize   = { height: $element[0].offsetHeight, width: $element[0].offsetWidth },
           elementOffset = $element.offset(),
           inView        = $element.data('inview');
 
