@@ -1,6 +1,6 @@
 {
   "name": "jquery-inview",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Element 'inview' Event Plugin",
   "main": "jquery.inview.js",
   "directories": {
@@ -12,9 +12,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jardix22/jquery.inview.git"
+    "url": "git+https://github.com/protonet/jquery.inview.git"
   },
-  "author": "",
+  "author": "Christopher Blum <christopher.blum@spellboy.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/jardix22/jquery.inview/issues"
